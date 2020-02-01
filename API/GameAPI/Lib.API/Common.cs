@@ -1,0 +1,79 @@
+﻿/**
+ * Project: Tai.Lib 
+ * FileName: Common.cs 
+ * EF Version: 6.1.0 - FR: 4.5
+ * Description: Short description.
+ * Version: 1.0.0
+ * Last update: 2015-4-4
+ * Author: NGUYỄN THẾ TÀI (TaiNguyen)
+ * Email: thetai.nguyen88@gmail.com
+ * Phone: 0902.064.637
+ */
+
+namespace Tai.Lib
+{
+    /// <summary>
+    ///  Các hàm render dữ liệu, HTML & get data từ web
+    /// </summary>
+    public class Common
+    {
+        public static long DateDiff(DateInterval intervalType, System.DateTime dateOne, System.DateTime dateTwo)
+        {
+            switch (intervalType)
+            {
+                case DateInterval.Day:
+                case DateInterval.DayOfYear:
+                    System.TimeSpan spanForDays = dateTwo - dateOne;
+                    return (long)spanForDays.TotalDays;
+                case DateInterval.Hour:
+                    System.TimeSpan spanForHours = dateTwo - dateOne;
+                    return (long)spanForHours.TotalHours;
+                case DateInterval.Minute:
+                    System.TimeSpan spanForMinutes = dateTwo - dateOne;
+                    return (long)spanForMinutes.TotalMinutes;
+                case DateInterval.Month:
+                    return ((dateTwo.Year - dateOne.Year) * 12) + (dateTwo.Month - dateOne.Month);
+                case DateInterval.Quarter:
+                    long dateOneQuarter = (long)System.Math.Ceiling(dateOne.Month / 3.0);
+                    long dateTwoQuarter = (long)System.Math.Ceiling(dateTwo.Month / 3.0);
+                    return (4 * (dateTwo.Year - dateOne.Year)) + dateTwoQuarter - dateOneQuarter;
+                case DateInterval.Second:
+                    System.TimeSpan spanForSeconds = dateTwo - dateOne;
+                    return (long)spanForSeconds.TotalSeconds;
+                case DateInterval.Weekday:
+                    System.TimeSpan spanForWeekdays = dateTwo - dateOne;
+                    return (long)(spanForWeekdays.TotalDays / 7.0);
+                case DateInterval.WeekOfYear:
+                    System.DateTime dateOneModified = dateOne;
+                    System.DateTime dateTwoModified = dateTwo;
+                    while (dateTwoModified.DayOfWeek != System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                    {
+                        dateTwoModified = dateTwoModified.AddDays(-1);
+                    }
+                    while (dateOneModified.DayOfWeek != System.Globalization.DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek)
+                    {
+                        dateOneModified = dateOneModified.AddDays(-1);
+                    }
+                    System.TimeSpan spanForWeekOfYear = dateTwoModified - dateOneModified;
+                    return (long)(spanForWeekOfYear.TotalDays / 7.0);
+                case DateInterval.Year:
+                    return dateTwo.Year - dateOne.Year;
+                default:
+                    return 0;
+            }
+        }
+    }
+    public enum DateInterval
+    {
+        Day,
+        DayOfYear,
+        Hour,
+        Minute,
+        Month,
+        Quarter,
+        Second,
+        Weekday,
+        WeekOfYear,
+        Year
+    }
+}
