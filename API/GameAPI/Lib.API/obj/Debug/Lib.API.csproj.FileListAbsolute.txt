@@ -1,0 +1,5 @@
+D:\GameProject\APIGame\API\GameAPI\Lib.API\bin\Debug\Lib.API.dll
+D:\GameProject\APIGame\API\GameAPI\Lib.API\bin\Debug\Lib.API.pdb
+D:\GameProject\APIGame\API\GameAPI\Lib.API\obj\Debug\Lib.API.csprojResolveAssemblyReference.cache
+D:\GameProject\APIGame\API\GameAPI\Lib.API\obj\Debug\Lib.API.dll
+D:\GameProject\APIGame\API\GameAPI\Lib.API\obj\Debug\Lib.API.pdb

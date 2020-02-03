@@ -1,24 +1,25 @@
 ﻿/**
- * Project: Tai.Lib 
+ * Project: Lib.API 
  * FileName: Util.cs 
  * EF Version: 6.1.0 - FR: 4.5
  * Description: Short description.
- * Version: 1.0.0
- * Last update: 2015-4-4
- * Author: NGUYỄN THẾ TÀI (TaiNguyen)
- * Email: thetai.nguyen88@gmail.com
- * Phone: 0902.064.637
+ * Last update: 2020-2-3
+ * Author: NGUYỄN ANH QUỐC (ASUS)
+ * Email: naquoc1204@gmail.com
+ * Phone: 093.123.6699
  */
+
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Tai.Lib
+namespace Lib.API
 {
     /// <summary>
     /// Các hàm tiện ích kiểm tra & xử lý dữ liệu
@@ -80,6 +81,12 @@ namespace Tai.Lib
         {
             Regex regex = new Regex(@"^\w+([-+.]\w+)*@(\w+([-.]\w+)*\.)+([a-zA-Z]+)+$", RegexOptions.IgnoreCase);
             return regex.Match(value).Success;
+        }
+
+        public static string GetUserEmail(string value)
+        {
+            MailAddress address = new MailAddress(value);
+            return address.User;
         }
 
         /// <summary>

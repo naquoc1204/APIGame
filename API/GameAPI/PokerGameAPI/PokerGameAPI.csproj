@@ -291,6 +291,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Providers\FacebookAuthProvider.cs" />
+    <Compile Include="Providers\MyTokenProvider.cs" />
     <Compile Include="Providers\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Providers\SimpleRefreshTokenProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -381,6 +382,10 @@
     <ProjectReference Include="..\Data.API\Data.API.csproj">
       <Project>{6fd3106d-c5d8-46c0-9795-2ceedca7ae97}</Project>
       <Name>Data.API</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Lib.API\Lib.API.csproj">
+      <Project>{1d112517-4ba5-4e48-839f-69fb283bb162}</Project>
+      <Name>Lib.API</Name>
     </ProjectReference>
     <ProjectReference Include="..\Service.API\Service.API.csproj">
       <Project>{b01d0d53-c3ce-479c-ba2c-882a9d307864}</Project>

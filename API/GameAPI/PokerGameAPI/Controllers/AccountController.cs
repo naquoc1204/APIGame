@@ -366,7 +366,8 @@ namespace PokerGameAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var user = new ApplicationUser() { UserName = model.Email, Email = model.Email };
+            string username = Lib.API.Util.GetUserEmail(model.Email);
+            var user = new ApplicationUser() { UserName = username, Email = model.Email };
             IdentityResult result = await UserManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
             {
@@ -414,6 +415,7 @@ namespace PokerGameAPI.Controllers
         [Route("RegisterExternalToken")]
         public async Task<IHttpActionResult> RegisterExternalToken(RegisterExternalTokenBindingModel model)
         {
+            
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -448,7 +450,8 @@ namespace PokerGameAPI.Controllers
             }
             else
             {
-                user = new ApplicationUser() { Id = Guid.NewGuid().ToString(), UserName = model.Email, Email = model.Email };
+                string username = Lib.API.Util.GetUserEmail(model.Email);
+                user = new ApplicationUser() { Id = Guid.NewGuid().ToString(), UserName = username, Email = model.Email };
 
                 result = await UserManager.CreateAsync(user);
                 if (!result.Succeeded)

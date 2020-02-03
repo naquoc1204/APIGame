@@ -1,0 +1,36 @@
+﻿extensions: designer.cs generated.cs
+extensions: .cs .cpp .h
+/**
+ * Project: %Project% 
+ * FileName: %FileName% 
+ * EF Version: 6.1.0 - FR: 4.5
+ * Description: Short description.
+ * Last update: %CurrentYear%-%CurrentMonth%-%CurrentDay%
+ * Author: NGUYỄN ANH QUỐC (%UserName%)
+ * Email: naquoc1204@gmail.com
+ * Phone: 093.123.6699
+ */
+extensions: .aspx .ascx
+<%-- 
+ * Project: %Project% 
+ * FileName: %FileName% 
+ * EF Version: 6.1.0 - FR: 4.5
+ * Description: Short description.
+ * Last update: %CurrentYear%-%CurrentMonth%-%CurrentDay%
+ * Author: NGUYỄN ANH QUỐC (%UserName%)
+ * Email: naquoc1204@gmail.com
+ * Phone: 093.123.6699
+--%>
+extensions: .vb
+'Sample license text.
+extensions:  .xml .config .xsd
+<!--
+ * Project: %Project% 
+ * FileName: %FileName% 
+ * EF Version: 6.1.0 - FR: 4.5
+ * Description: Short description.
+ * Last update: %CurrentYear%-%CurrentMonth%-%CurrentDay%
+ * Author: NGUYỄN ANH QUỐC (%UserName%)
+ * Email: naquoc1204@gmail.com
+ * Phone: 093.123.6699
+-->

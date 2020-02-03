@@ -1,4 +1,14 @@
-﻿using System.Reflection;
+﻿/**
+ * Project: Lib.API 
+ * FileName: AssemblyInfo.cs 
+ * EF Version: 6.1.0 - FR: 4.5
+ * Description: Short description.
+ * Last update: 2020-2-3
+ * Author: NGUYỄN ANH QUỐC (ASUS)
+ * Email: naquoc1204@gmail.com
+ * Phone: 093.123.6699
+ */
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
